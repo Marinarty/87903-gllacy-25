@@ -8,17 +8,17 @@
     <div class="container">
     <header class="page-header">
       <h1 class="visually-hidden">Магазин мороженого Gllacy</h1>
-      <a href="index.html" class="page-header__logo"><img src="img/logo.svg" width="155" height="65" alt="Магазин мороженого Gllacy"></a>
+      <a href="index.html" class="page-header__logo"><img src="img/logo.svg" width="155" height="65" alt="Логотип магазина мороженого Gllacy"></a>
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item  main-nav__item--active"><a href="#">Каталог</a></li>
             <ul>
-                <li class="main-nav__dropdown"><a href="#">Новинки</a></li>
-                <li class="main-nav__dropdown"><a href="catalog.html">Сливочное</a></li>
-                <li class="main-nav__dropdown"><a href="#">Щербеты</a></li>
-                <li class="main-nav__dropdown"><a href="#">Фруктовый лед</a></li>
-                <li class="main-nav__dropdown"><a href="#">Мелорин</li>
-              </ul>
+              <li class="main-nav__dropdown"><a href="#">Новинки</a></li>
+              <li class="main-nav__dropdown"><a href="catalog.html">Сливочное</a></li>
+              <li class="main-nav__dropdown"><a href="#">Щербеты</a></li>
+              <li class="main-nav__dropdown"><a href="#">Фруктовый лед</a></li>
+              <li class="main-nav__dropdown"><a href="#">Мелорин</li>
+            </ul>
           <li class="main-nav__item"><a href="#">Доставка и оплата</a></li>
           <li class="main-nav__item"><a href="#">О компании</a></li>
         </ul>
@@ -26,35 +26,42 @@
       <div class="users-block">
         <div class="page-header__search">
           <a href=" " class="btn  btn-transparent">Поиск</a>
+          <p class="visually-hidden">Поиск по сайту</p>
           <form method="post" action=" ">
-            <input type="text" placeholder="Что ищем?">
+            <input type="text" placeholder="Что ищем?" name="search-text" aria-label="Поиск по сайту">
           </form>
         </div>
         <div class="login">
-          <a href="#" class="btn  btn-transparent">Вход</a> 
-          <form method="post" action=" " class="login-form">
-            <input type="email" placeholder="Электронная почта" name="email" required>
-            <input type="password" placeholder="Пароль" name="password" required>
-            <button type="submit" class="btn  btn-main">Войти</button>
-            <ul class="login-form__tips">
-              <li><a href="#">Забыли пароль?</a></li>
-              <li><a href="#">Новая регистрация</a></li>
-            </ul>
-          </form>
-        </div>
+            <a href="#" class="btn  btn-transparent">Вход</a>
+            <form method="post" action=" " class="login-form">
+              <p class="visually-hidden">Вход в личный кабинет</p>
+              <label class="visually-hidden" for="login-email">Электронная почта</label>
+              <input type="email" placeholder="Электронная почта" id="login-email" name="login-email" required>
+              <label class="visually-hidden" for="login-password">Пароль</label>
+              <input type="password" placeholder="Пароль" id="login-password" name="login-password" required>
+              <button type="submit" class="btn  btn-main">Войти</button>
+              <ul class="login-form__tips">
+                <li><a href="#">Забыли пароль?</a></li>
+                <li><a href="#">Новая регистрация</a></li>
+              </ul>
+            </form>
+          </div>
         <div class="cart">
+          <p class="visually-hidden">Корзина</p>
           <a href="#" class="btn  btn-transparent  btn-transparent--cart-with-goods">2 товара</a>
           <form method="post" action=" " class="order-form">
+              <p class="visually-hidden">Товары в корзине</p>
+              <!-- насколько это правильно - делать этот блок таблицей? есть ли преимущества по сравнению со списком, например? -->
               <table class="order-form__items">
                   <tr>
-                    <td>Удалить</td>
+                    <td><button type="button">Удалить</button></td>
                     <td><img src="img/ice-cream-1.jpg" width="35" height="35" alt="Пломбир с апельсиновым джемом"></td>
                     <td>Пломбир с апельсиновым джемом</td>
                     <td>1,5 кг х <span>200 руб.</span></td>
                     <td>300 руб.</td>
                   </tr>
                   <tr>
-                      <td>Удалить</td>
+                      <td><button type="button">Удалить</button></td>
                       <td><img src="img/ice-cream-3.jpg" width="35" height="35" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
                       <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                       <td>1,5 кг х <span>300 руб.</span></td>
@@ -64,7 +71,7 @@
                       <td><span>Итого: 750 руб.</span></td>
                     </tr>
                 </table>
-                <button type="submit" class="btn  btn-main">Оформить заказ</button>
+                <a href="#" class="btn  btn-main">Оформить заказ</a>
           </form>
         </div>
       </div>
@@ -114,91 +121,91 @@
         </fieldset>
         <fieldset class="topping  btn  btn-transparent">
           <legend>Наполнители:</legend>
-          <input type="checkbox" id="chocolate" name="topping" value="Шоколадные" checked>
+          <input type="checkbox" id="chocolate" name="chocolate" checked>
           <label for="chocolate">Шоколадные</label>
-          <input type="checkbox" id="sugar" name="topping" value="Сахарные присыпки" checked>
+          <input type="checkbox" id="sugar" name="sugar" checked>
           <label for="sugar">Сахарные присыпки</label>
-          <input type="checkbox" id="fruits" name="topping" value="Фрукты">
+          <input type="checkbox" id="fruits" name="fruits">
           <label for="fruits">Фрукты</label>
-          <input type="checkbox" id="syrups" name="topping" value="Сиропы">
+          <input type="checkbox" id="syrups" name="syrups">
           <label for="syrups">Сиропы</label>
-          <input type="checkbox" id="jams" name="topping" value="Джемы">
+          <input type="checkbox" id="jams" name="jams">
           <label for="jams">Джемы</label>
         </fieldset>
-        <button class="btn  btn-transparent  btn-transparent--filter-btn">Применить</button>
+        <button type="submit" class="btn  btn-transparent  btn-transparent--filter-btn">Применить</button>
       </form>  
     <section class="catalog">
       <article class="catalog-item">
         <img src="img/ice-cream-1.jpg" width="268" height="268" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" class="catalog-item__photo">
         <p class="catalog-item__price">310 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-2.jpg" width="268" height="268" alt="Сливочно-кофейное с кусочками шоколада" class="catalog-item__photo">
         <p class="catalog-item__price">380 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочно-кофейное с кусочками шоколада</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-3.jpg" width="268" height="268" alt="Сливочно-клубничное с присыпкой из белого шоколада" class="catalog-item__photo">
         <p class="catalog-item__price">355 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-4.jpg" width="268" height="268" alt="Сливочное крем-брюле с карамельной подливкой" class="catalog-item__photo">
         <p class="catalog-item__price">415 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-5.jpg" width="268" height="268" alt="Сливочное с брусничным джемом" class="catalog-item__photo">
         <p class="catalog-item__price">325 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с брусничным джемом</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-6.jpg" width="268" height="268" alt="Сливочно-черничное с цельными ягодами черники" class="catalog-item__photo">
         <p class="catalog-item__price">410 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочно-черничное с цельными ягодами черники</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-7.jpg" width="268" height="268" alt="Сливочно-лимонное с карамельной присыпкой" class="catalog-item__photo">
         <p class="catalog-item__price">375 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочно-лимонное с карамельной присыпкой</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-8.jpg" width="268" height="268" alt="Сливочное с шоколадной стружкой" class="catalog-item__photo">
         <p class="catalog-item__price">320 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с шоколадной стружкой</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-9.jpg" width="268" height="268" alt="Сливочно-ванильное с кусочками шоколада" class="catalog-item__photo">
         <p class="catalog-item__price">440 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочно-ванильное с кусочками шоколада</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>  
       <article class="catalog-item">
         <img src="img/ice-cream-10.jpg" width="268" height="268" alt="Сливочное с ментоловым сиропом" class="catalog-item__photo">
         <p class="catalog-item__price">435 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с ментоловым сиропом</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-11.jpg" width="268" height="268" alt="Сливочное с кусочками черного шоколада" class="catalog-item__photo">
         <p class="catalog-item__price">355 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с кусочками черного шоколада</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>
       <article class="catalog-item">
         <img src="img/ice-cream-12.jpg" width="268" height="268" alt="Сливочное с мятным сиропом" class="catalog-item__photo">
         <p class="catalog-item__price">420 &#8381;<span>/кг</span></p>
         <h1 class="catalog-item__item-title"><a href="#">Сливочное с мятным сиропом</a></h1>
-        <button class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
+        <button type="submit" class="catalog-item__quick-view  btn  btn-main">Быстрый просмотр</button>
       </article>    
     </section>
     <ul class="pagination">
@@ -213,10 +220,10 @@
     </main>
     <footer class="page-footer">
       <ul class="social-links">
-        <li><a href="#" class="social-links__item  social-links__item--tw">Twitter</a></li>
-        <li><a href="#" class="social-links__item  social-links__item--ig">Instagram</a></li>
-        <li><a href="#" class="social-links__item  social-links__item--fb">Facebook</a></li>
-        <li><a href="#" class="social-links__item  social-links__item--vk">Vkontakte</a></li>
+        <li><a href="#" class="social-links__item  social-links__item--tw" aria-label="Gllacy в Twitter">Twitter</a></li>
+        <li><a href="#" class="social-links__item  social-links__item--ig" aria-label="Gllacy в Instagram">Instagram</a></li>
+        <li><a href="#" class="social-links__item  social-links__item--fb" aria-label="Gllacy в Facebook">Facebook</a></li>
+        <li><a href="#" class="social-links__item  social-links__item--vk" aria-label="Gllacy ВКонтакте">Vkontakte</a></li>
       </ul>
       <ul class="useful-links">
         <li><a href="#" class="useful-links__item  useful-links__item--favorite">Для поставщиков</a></li>

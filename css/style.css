@@ -62,6 +62,9 @@ body {
 
 
 .main-nav__dropdown {
+    /* display: none; */
+
+
     width: 143px;
     padding: 0;
 
@@ -147,21 +150,27 @@ body {
   } */
   
 
-.main-nave__item a:hover,
-.main-nave__item a:focus,
+.main-nav__item a:hover,
+.main-nav__item a:focus,
 .page-header__search a:hover,
 .page-header__search a:focus,
 .login a:hover,
 .login a:focus,
 .cart a:hover,
 .cart a:focus  {
-    /* border-radius: 20px; */
+    border-radius: 20px;
     color: #323232;
 
     background-color: #f7f6f3;
-    border: 0;
+    border-bottom: 0;
 
   }
+
+
+  .main-nav__item a:active {
+    box-shadow: inset 0px 2px 1px 0 #696969;
+
+}
 
   .login-form__tips a:hover,
   .login-form__tips a:focus {
@@ -223,7 +232,7 @@ body {
   .btn-main:focus {
     color: #ffffff;
     box-shadow: 0px 1px 2px 0 #ac1000;
-    background-color: #f28065;
+    background: #f28065;
   }
 
   .btn-main:active {
@@ -470,5 +479,50 @@ line-height: 18px;
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+
+  .main-nav__item--active a {
+    background-color: #d07058;
+    border-radius: 20px;
+  }
+
+  .breadcrumbs {
+      font-size: 14px;
+      line-height: 16px;
+      list-style: none;
+  }
+
+  .page-title {
+    font-size: 35px;
+    line-height: 41px;
+}
+
+.main-filter legend {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.main-filter label {
+    line-height: 18px;
+}
+  
+.btn-transparent--filter-btn {
+    color: #ffffff;
+    border: solid 2px #ffffff;
+}
+
+.btn-transparent--filter-btn:hover,
+.btn-transparent--filter-btn:focus {
+    color: #323232;
+    border: solid 2px #ffffff;
+    background-color: #ededed;
+}
+
+.btn-transparent--filter-btn:active {
+    box-shadow: inset 0px 2px 1px 0 #696969;
+    border: 0;
+}
+
+
+  
   
   

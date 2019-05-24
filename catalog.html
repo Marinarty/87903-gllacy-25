@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Магазин мороженого Gllacy</title>
+    <title>Сливочное мороженое</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"> 
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -78,15 +78,18 @@
           </form>
         </div>
       </div>
-      <div class="extra-info">
-        <p class="extra-info__header">с 10 до 20, ежедневно</p>
-        <p class="extras-info__tel">8 812 450-25-25</p>
-      </div>
+      
     </header>
     <main class="container">
+        <div class="extra-info">
+            <p class="extra-info__header">с 10 до 20, ежедневно</p>
+            <p class="extras-info__tel">8 812 450-25-25</p>
+          </div>
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item">&raquo;</li>
         <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
+        <li class="breadcrumbs__item">&raquo;</li>
         <li class="breadcrumbs__item  breadcrumbs__item--current"><span>Сливочное мороженое</span></li>
       </ul>
       <h1 class="page-title">Сливочное мороженое</h1>
@@ -215,16 +218,17 @@
       </article>    
     </section>
     <ul class="pagination">
-      <li class="pagination__item"><a href="#">&laquo;</a></li>
+      <li class="pagination__item  pagination__item--disabled"><a href="#">&#8249;</a></li>
       <li class="pagination__item  pagination__item--current">1</li>
       <li class="pagination__item"><a href="#">2</a></li>
       <li class="pagination__item"><a href="#">3</a></li>
       <li class="pagination__item"><a href="#">4</a></li>
       <li class="pagination__item"><a href="#">5</a></li>
-      <li class="pagination__item"><a href="#">&raquo;</a></li>
+      <li class="pagination__item"><a href="#">&#8250;</a></li>
     </ul>
     </main>
     <footer class="page-footer">
+        <div class="container">
       <ul class="social-links">
         <li><a href="#" class="social-links__item  social-links__item--tw" aria-label="Gllacy в Twitter">Twitter</a></li>
         <li><a href="#" class="social-links__item  social-links__item--ig" aria-label="Gllacy в Instagram">Instagram</a></li>
@@ -241,7 +245,7 @@
         <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" class="academy-logo"><img src="img/logo-htmlacademy.svg" width="110" height="40" alt="HTMLAcademy"></a>
         <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTMLAcademy</a> &#169; 2019</p>
       </div>
-    </div>
+   </div>
     </footer>
   </body>
 </html>

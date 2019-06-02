@@ -253,22 +253,22 @@
     </div>
     </footer>
   
-
+<div class="modal__background">
     <section class="modal feedback">
       <p class="visually-hidden">Форма обратной связи</p>
       <p class="modal__title">Мы обязательно вам ответим!</p>
       <form method="post" action=" " class="feedback__form">
         <label class="visually-hidden" for="feedback-user-name">Имя</label>
-        <input type="text" placeholder="Как вас зовут?" name="feedback-user-name" id="feedback-user-name">
+        <input class="field feedback__name" type="text" placeholder="Как вас зовут?" name="feedback-user-name" id="feedback-user-name">
         <label class="visually-hidden" for="feedback-user-email">Электронная почта</label>
-        <input type="email" placeholder="Ваша почта для ответа?" name="feedback-user-email" id="feedback-user-email" required>
+        <input class="field feedback__email" type="email" placeholder="Ваша почта для ответа?" name="feedback-user-email" id="feedback-user-email" required>
         <label class="visually-hidden" for="feedback-user-text">Текст сообщения</label>
-        <textarea rows="10" cols="40" placeholder="Напишите что-нибудь..." name="feedback-user-text" id="feedback-user-text" required></textarea>
-        <button type="submit" class="btn  btn-main">Отправить</button>
+        <textarea class="field" rows="5" cols="40" placeholder="Напишите что-нибудь..." name="feedback-user-text" id="feedback-user-text" required></textarea>
+        <button type="submit" class="feedback__send-button  btn  btn-main">Отправить</button>
       </form>
-      <button class="modal__close" type="button">Закрыть</button>
+      <button class="modal__close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
-
+</div>
 
 
 </div>

@@ -103,10 +103,7 @@ body {
 
   }
 
-.dropdown-item--current {
-  background-color: #d07058;
-  color: #ffffff;
-}
+
 
 .main-nav__item span,
 .useful-links span {
@@ -213,10 +210,6 @@ top: 32px;
     display: none;
   }
 
-  .search-form {
-      width: 300px;
-      
-  }
 
   .page-header__search a:hover + .search-wrapper {
     display: block;
@@ -235,14 +228,6 @@ top: 32px;
         z-index: 5;
         width: 277px;
 }
-
-  .login-form {
-      width: 237px;
-  
- 
-
-
-  }
 
   .login a:hover + .login-wrapper {
     display: block;
@@ -330,7 +315,6 @@ top: 32px;
 }
 
 
-
 .main-nav__dropdown a {
     display: block;
 
@@ -346,6 +330,13 @@ top: 32px;
     border: 0;
   }
 
+  .dropdown-item--current {
+    background-color: #d07058;
+  }
+
+  .dropdown-item--current > a {
+    color: #ffffff;
+  }
 
  .login,
   .cart {
@@ -564,20 +555,6 @@ background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(
   }
 
 
-
-
-  /* .search-form,
-  .login-form {
-      background-color: #f8f7f4;
-  } */
-  
-
-
-
-
-
-
-
   .extra-info {
     width: 100%;
   
@@ -621,11 +598,6 @@ background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(
     display: none;
   }
 
-
-
-  /* .slider__item--active {
-    display: block;
-  } */
   .slider__item-title {
     width: 675px;
     margin: 0 auto;
@@ -697,12 +669,6 @@ background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(
       border: 0;
       cursor: pointer;
   }
-
-
-  /* a.btn:hover {
-    color: #ffffff;
-    cursor: grab;
-} */
 
  .btn-transparent {
       background-color: rgba(255, 255, 255, 0.3)
@@ -1514,6 +1480,7 @@ input[type="radio"].visually-hidden {
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 10px;
+    padding-left: 18px;
 }
 
 .main-filter fieldset {
@@ -1528,6 +1495,55 @@ input[type="radio"].visually-hidden {
     cursor: pointer;
 }
 
+
+
+
+.price__range-controls {
+  width: 176px;
+  position: relative;
+}
+
+.price__range-scale {
+  height: 4px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.price__range-bar {
+  width: 100px;
+  position: absolute;
+  left: 45px;
+  height: 4px;
+
+  background: #ffffff;
+}
+
+.price__range-toggle {
+  position: absolute;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.price__range-toggle--min {
+  left: 35px;
+}
+
+.price__range-toggle--max{
+  left: 135px;
+}
+
+
+
+
+
 .sorting select {
   color: #ffffff;
 }
@@ -1537,9 +1553,7 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-/* .sorting .sorting__first-element {
-  color: #ffffff;
-} */
+
 
 .fatness label,
 .topping label {
@@ -1586,6 +1600,56 @@ opacity: 0,8;
 .fatness input[type="radio"]:checked + label:hover::after {
   background-color: rgba(255, 255, 255, 1);
 }
+
+
+.topping input[type="checkbox"] + label::before {
+  content: "";
+
+  position: absolute;
+display: block;
+width: 24px;
+height: 24px;
+top: -2px;
+left: 0;
+
+background-image: url("../img/checkbox-off.svg");
+background-repeat: no-repeat;
+
+opacity: 0.8;
+}
+
+.topping input[type="checkbox"]:checked + label::before {
+  content: "";
+
+  position: absolute;
+display: block;
+width: 24px;
+height: 24px;
+top: -2px;
+left: 0;
+
+background-image: url("../img/checkbox-on.svg");
+background-repeat: no-repeat;
+
+opacity: 0.8;
+}
+
+.topping input[type="checkbox"] + label:hover::before,
+.topping input[type="checkbox"]:checked + label:hover::before,
+.topping input[type="checkbox"] + label:focus::before,
+.topping input[type="checkbox"]:checked + label:focus::before{
+
+opacity: 1;
+}
+
+.topping input[type="checkbox"] + label::before,
+.topping input[type="checkbox"]:disabled + label::before {
+
+opacity: 0.4;
+}
+
+
+
 
 
 .pagination {
@@ -1655,19 +1719,22 @@ opacity: 0,8;
     color: #ffffff;
     border: solid 2px #ffffff;
     display: inline-block;
+    margin-top: 10px;
 }
 
 .btn-transparent--filter-btn:hover,
 .btn-transparent--filter-btn:focus {
     color: #323232;
     border: solid 2px #ffffff;
-    background-color: #ededed;
+    background-color: #ffffff;
 }
 
 .btn-transparent--filter-btn:active {
     box-shadow: inset 0px 2px 1px 0 #696969;
     border: 0;
+    padding: 11px 17px;
 }
+
 
 
   

@@ -16,14 +16,15 @@
             <a class="page-header__logo" href="index.html"><img src="img/logo.svg" width="155" height="65" alt="Логотип магазина мороженого Gllacy"></a>
             <nav class="main-nav">
               <ul class="main-nav__list">
-                <li class="main-nav__item main-nav__item--active"><a href="#"><span>Каталог</span></a></li>
+                <li class="main-nav__item main-nav__item--with-dropdown main-nav__item--active"><a class="active" href="#"><span>Каталог</span></a>
                   <ul class="main-nav__dropdown modal">
                     <li class="dropdown-item  dropdown-item--new"><a href="#">Новинки</a></li>
-                    <li class="dropdown-item"><a href="catalog.html">Сливочное</a></li>
+                    <li class="dropdown-item  dropdown-item--current"><a href="catalog.html">Сливочное</a></li>
                     <li class="dropdown-item"><a href="#">Щербеты</a></li>
                     <li class="dropdown-item"><a href="#">Фруктовый лед</a></li>
                     <li class="dropdown-item"><a href="#">Мелорин</a></li>
                   </ul>
+                  </li>
                 <li class="main-nav__item"><a href="#"><span>Доставка и оплата</span></a></li>
                 <li class="main-nav__item"><a href="#"><span>О компании</span></a></li>
               </ul>
@@ -72,29 +73,30 @@
                 <div class="cart-wrapper">
                   <form method="post" action=" " class="order-form  modal">
                       <p class="visually-hidden">Товары в корзине</p>
-                      <table class="order-form__items">
-                          <tr>
-                            <td><button type="button">Удалить</button></td>
-                            <td><img src="img/ice-cream-1.jpg" width="35" height="35" alt="Пломбир с апельсиновым джемом"></td>
-                            <td>Пломбир с апельсиновым джемом</td>
-                            <td>1,5 кг х <span>200 руб.</span></td>
-                            <td>300 руб.</td>
-                          </tr>
-                          <tr>
-                              <td><button type="button">Удалить</button></td>
-                              <td><img src="img/ice-cream-3.jpg" width="35" height="35" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
-                              <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-                              <td>1,5 кг х <span>300 руб.</span></td>
-                              <td>450 руб.</td>
-                            </tr>
-                            <tr colspan="5">
-                              <td><span>Итого: 750 руб.</span></td>
-                            </tr>
-                        </table>
-                        <a href="#" class="btn  btn-main">Оформить заказ</a>
+                      <div class="order-form__items">
+                          <div class="order-form__item">
+                            <button class="order-form__delete" type="button"><span class="visually-hidden">Удалить</span></button>
+                            <div><img src="img/ice-cream-1.jpg" width="35" height="35" alt="Пломбир с апельсиновым джемом"></div>
+                            <p class="order-form__product-title">Пломбир с апельсиновым джемом</p>
+                            <p>1,5 кг х <span>200 руб.</span></p>
+                            <p>300 руб.</p>
+                          </div>
+                          <div class="order-form__item">
+                              <button class="order-form__delete" type="button"><span class="visually-hidden">Удалить</span></button>
+                              <div><img src="img/ice-cream-3.jpg" width="35" height="35" alt="Клубничный пломбир с присыпкой из белого шоколада"></div>
+                            <p class="order-form__product-title">Клубничный пломбир с присыпкой из белого шоколада</p>
+                            <p>1,5 кг х <span>300 руб.</span></p>
+                            <p>450 руб.</p>
+                          </div>
+                            
+                              <div class="order-form__total-price">Итого: 750 руб.</div>
                         </div>
+                          
+                        <a href="#" class="btn  btn-main">Оформить заказ</a>
                   </form>
                 </div>
+            </div>
+
             </div>
             <div class="extra-info">
               <p class="extra-info__header">с 10 до 20, ежедневно</p>
@@ -185,7 +187,7 @@
       </div>
       
     </header> -->
-    <main class="container">
+    <main class="container container--underlining">
 
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>

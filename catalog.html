@@ -122,6 +122,7 @@
             <option value="expensive">сначала дорогие</option>
             <option value="fatness">по жирности</option>
           </select> 
+          <span class="sorting__arrow"></span>
         </fieldset>
         <fieldset class="price">
           <legend>Цена: 100 руб. - 500 руб.</legend>
@@ -153,15 +154,15 @@
         <fieldset class="topping">
           <legend>Наполнители:</legend>
           <div class="btn  btn-transparent">
-          <input class="visually-hidden" type="checkbox" id="chocolate" name="topping" checked>
+          <input class="visually-hidden" type="checkbox" id="chocolate" name="topping" value="шоколад" checked>
           <label for="chocolate">Шоколадные</label>
-          <input class="visually-hidden" type="checkbox" id="sugar" name="topping" checked>
+          <input class="visually-hidden" type="checkbox" id="sugar" name="topping" value="сахар" checked>
           <label for="sugar">Сахарные присыпки</label>
-          <input class="visually-hidden" type="checkbox" id="fruits" name="topping">
+          <input class="visually-hidden" type="checkbox" id="fruits" name="topping" value="фрукты">
           <label for="fruits">Фрукты</label>
-          <input class="visually-hidden" type="checkbox" id="syrups" name="topping">
+          <input class="visually-hidden" type="checkbox" id="syrups" name="topping" value="сироп">
           <label for="syrups">Сиропы</label>
-          <input class="visually-hidden" type="checkbox" id="jams" name="topping">
+          <input class="visually-hidden" type="checkbox" id="jams" name="topping" value="джем">
           <label for="jams">Джемы</label>
         </div>
         </fieldset>
@@ -290,13 +291,24 @@
       </article>    
     </section>
     <ul class="pagination">
-      <li class="pagination__item  pagination__item--disabled"><a href="#">&#8249;</a></li>
-      <li class="pagination__item  pagination__item--current">1</li>
-      <li class="pagination__item"><a href="#">2</a></li>
-      <li class="pagination__item"><a href="#">3</a></li>
-      <li class="pagination__item"><a href="#">4</a></li>
-      <li class="pagination__item"><a href="#">5</a></li>
-      <li class="pagination__item"><a href="#">&#8250;</a></li>
+      <li>
+        <a class="pagination__item  pagination__item--back" aria-label="Назад">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"><path fill="#FFF" d="M7.237 5.642L1.73.132c-.2-.197-.52-.197-.717 0s-.198.52 0 .717L6.163 6l-5.15 5.15c-.2.198-.2.52 0 .717.098.1.228.148.357.148.13 0 .26-.05.358-.148l5.51-5.51c.198-.197.198-.517 0-.715z"/></svg>
+
+      </a>
+    </li>
+      <li><a class="pagination__item pagination__item--current" aria-label="Страница 1">1</a></li>
+      <li><a href="#" class="pagination__item" aria-label="Страница 2">2</a></li>
+      <li><a href="#" class="pagination__item" aria-label="Страница 3">3</a></li>
+      <li><a href="#" class="pagination__item" aria-label="Страница 4">4</a></li>
+      <li><a href="#" class="pagination__item" aria-label="Страница 5">5</a></li>
+      <li>
+        <a href="#" class="pagination__item pagination__item--next" aria-label="Вперед">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"><path fill="#FFF" d="M7.237 5.642L1.73.132c-.2-.197-.52-.197-.717 0s-.198.52 0 .717L6.163 6l-5.15 5.15c-.2.198-.2.52 0 .717.098.1.228.148.357.148.13 0 .26-.05.358-.148l5.51-5.51c.198-.197.198-.517 0-.715z"/></svg>
+
+
+      </a>
+    </li>
     </ul>
     </main>
     <footer class="page-footer">

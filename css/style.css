@@ -554,14 +554,14 @@ background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(
     box-shadow: none;
 }
 
-.main-nav__item--with-dropdown:focus-within > a {
+/* .main-nav__item--with-dropdown:focus-within > a {
 
 border-radius: 20px;
     color: #323232;
 
     background-color: #f7f6f3;
     border-bottom: 0;
-}
+} */
 
 
 .main-nav__dropdown .dropdown-item--new {

@@ -131,9 +131,12 @@ top: 32px;
   line-height: 16px;
 }
 
-.main-nav__item--with-dropdown:hover .main-nav__dropdown {
+.main-nav__item--with-dropdown:hover .main-nav__dropdown,
+.main-nav__item--with-dropdown:focus .main-nav__dropdown,
+.main-nav__item--with-dropdown:focus-within .main-nav__dropdown {
   display: block;
 }
+
 
 
 .main-nav__item .modal {
@@ -211,9 +214,23 @@ top: 32px;
   }
 
 
-  .page-header__search a:hover + .search-wrapper {
+  /* .page-header__search a:hover + .search-wrapper {
     display: block;
+} */
+
+.page-header__search a:focus-within + .search-wrapper,
+.page-header__search a:hover + .search-wrapper {
+  display: block;
 }
+
+.page-header__search:focus-within path,
+.login:focus-within path,
+.cart:focus-within path,
+.cart:focus-within circle {
+  fill: #323232;
+}
+
+
 
 .login {
   position: relative;
@@ -229,7 +246,8 @@ top: 32px;
         width: 277px;
 }
 
-  .login a:hover + .login-wrapper {
+  .login a:hover + .login-wrapper,
+  .login a:focus-within + .login-wrapper {
     display: block;
 }
 
@@ -534,6 +552,15 @@ background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(
     border-radius: 0;
     border: none;
     box-shadow: none;
+}
+
+.main-nav__item--with-dropdown:focus-within > a {
+
+border-radius: 20px;
+    color: #323232;
+
+    background-color: #f7f6f3;
+    border-bottom: 0;
 }
 
 

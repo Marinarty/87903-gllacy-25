@@ -14,7 +14,6 @@ body {
   a {
       color:  #ffffff;
 
-
       text-decoration: none;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
@@ -87,20 +86,20 @@ body {
   }
 
   .main-nav__list a {
-    padding: 7px 16px;
+    padding: 6px 16px;
     border: none;
   }
 
   .main-nav__list {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 3px;
     
 
   }
 
   .main-nav__item {
     margin-left: 3px;
-
   }
 
 
@@ -114,6 +113,7 @@ body {
 .main-nav__item--with-dropdown {
   position: relative;
   padding-bottom: 10px;
+  
 }
 
 .main-nav__dropdown {
@@ -122,7 +122,7 @@ body {
   padding-bottom: 5px;
   width: 143px;
 left: -5px;
-top: 32px;
+top: 28px;
 
   color: #323232;
   font-weight: 400;
@@ -138,6 +138,8 @@ top: 32px;
 }
 
 
+
+
 .main-nav__item .modal {
   padding: 0;
 }
@@ -151,23 +153,7 @@ top: 32px;
   box-sizing: border-box;
 }
 
-.
-
-/* 
-.main-nav__dropdown {
-  display: none;
-
-
-  width: 143px;
-  padding: 0;
-
-  color: #323232;
-  font-weight: 400;
-  
-} */
 .main-nav {
-  /* width: 700px; */
-
     line-height: 18px;
     color: #ffffff;
     font-weight: 700;
@@ -209,7 +195,6 @@ top: 32px;
   .search-wrapper {
     position: absolute;
     width: 341px;
-    /* padding-top: 5px; */
     right: 0;
     top: 40px;
     z-index: 10;
@@ -218,13 +203,9 @@ top: 32px;
 
 
 
-
-/* .page-header__search a:focus-within + .search-wrapper,
-.page-header__search a:hover + .search-wrapper {
-  display: block;
-} */
-
-.page-header__search:hover .search-wrapper {
+.page-header__search:hover .search-wrapper,
+.page-header__search:focus-within .search-wrapper,
+.page-header__search:focus .search-wrapper {
   display: block;
 }
 
@@ -239,12 +220,6 @@ top: 32px;
 
 
 
-/* .login {
-  position: relative;
-  padding-bottom: 5px;
-  padding-top: 5px;
-} */
-
 .login-wrapper {
   position: absolute;
 
@@ -255,18 +230,17 @@ top: 32px;
         width: 277px;
 }
 
-.login:hover .login-wrapper {
+.login:hover .login-wrapper,
+.login:focus-within .login-wrapper,
+.login:focus .login-wrapper {
   display: block;
 }
 
-  /* .login a:hover + .login-wrapper,
-  .login a:focus-within + .login-wrapper {
-    display: block;
-} */
 
 .login a,
 .cart a {
      color: #ffffff;
+     font-weight: 500;
      padding: 7px 16px;
      padding-left: 45px;
      display: flex;
@@ -277,14 +251,18 @@ top: 32px;
      border: 0;
  }
 
- .main-nav__item a:hover,
-.main-nav__item a:focus,
-.page-header__search a:hover,
-.page-header__search a:focus,
-.login a:hover,
-.login a:focus,
-.cart a:hover,
-.cart a:focus {
+ .main-nav__item:hover > a,
+.main-nav__item:focus > a,
+.main-nav__item:focus-within > a,
+.page-header__search:hover > a,
+.page-header__search:focus > a,
+.page-header__search:focus-within > a,
+.login:focus > a,
+.login:hover > a,
+.login:focus-within > a,
+.cart:focus > a,
+.cart:hover > a,
+.cart:focus-within > a {
     border-radius: 20px;
     color: #323232;
 
@@ -292,8 +270,6 @@ top: 32px;
     border-bottom: 0;
 
   }
-
-
 
 
  .login-form input {
@@ -314,6 +290,7 @@ top: 32px;
 
 .login-form__wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -321,6 +298,7 @@ top: 32px;
   padding: 0;
 
   color: #323232;
+  font-weight: 400;
   display: inline-block;
   border-bottom: 1px solid #adacaa;
 }
@@ -367,6 +345,7 @@ top: 32px;
 
   .dropdown-item--current > a {
     color: #ffffff;
+    border: none;
   }
 
  .login,
@@ -399,31 +378,6 @@ top: 32px;
     fill: #000000;
   }
 
-  /* .login::before,
-  .cart::before {
-  content: "";
-  
-  position: absolute;
-  top: 8px;
-  left: 14px;
-
-  
-  width: 22px;
-  height: 20px;
-  
-  background-repeat: no-repeat;
-    background-position: 0 0;
-  }
-
-  .login::before {
-    background-image: url("../img/entrance.svg");
-
-  }
-
-  .cart::before {
-    background-image: url("../img/basket.svg");
-  
-  }  */
 .page-header__search,
 .login {
   margin-right: 10px;
@@ -431,9 +385,17 @@ top: 32px;
 
 
 
-.cart:hover a + .cart-wrapper {
+/* .cart:hover a + .cart-wrapper {
   display:block;
+} */
+
+
+.cart:hover .cart-wrapper,
+.cart:focus-within .cart-wrapper,
+.cart:focus .cart-wrapper {
+  display: block;
 }
+
 
 .order-form {
   display: flex;
@@ -1428,12 +1390,13 @@ input[type="radio"].visually-hidden {
 }
 
   .main-nav__item--active .active{
-    padding: 7px 16px;
+    padding: 6px 16px;
 
     background-color: #d07058;
     border-radius: 20px;
   
   }
+
 
   .main-nav__item--active span {
     border: 0;

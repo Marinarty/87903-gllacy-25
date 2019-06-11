@@ -220,6 +220,7 @@ top: 28px;
 
 
 
+
 .login-wrapper {
   position: absolute;
 
@@ -348,6 +349,12 @@ top: 28px;
     border: none;
   }
 
+  .dropdown-item--current:hover > a,
+  .dropdown-item--current:focus > a,
+  .dropdown-item--current:focus-within > a {
+    color: #000000;
+  }
+
  .login,
   .cart {
     position: relative;
@@ -370,8 +377,9 @@ top: 28px;
 
   .login:hover path,
   .login:focus path,
-  .cart:hover path,
-  .cart:focus path,
+  .cart:not(.cart--cart-with-goods):hover path,
+  .cart:not(.cart--cart-with-goods):focus path,
+  .cart:not(.cart--cart-with-goods):focus-within path,
   .cart:hover circle,
   .cart:focus circle
    {
@@ -623,6 +631,12 @@ border-radius: 20px;
   border: 2px solid #ffffff;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.slider__toggles label:hover {
+  
+  background-color: rgba(255, 255, 255, 0.4);
+
 }
 
 .slider__toggles {
@@ -1579,7 +1593,8 @@ input[type="radio"].visually-hidden {
 }
 
 .price__range-toggle:hover,
-.price__range-toggle:focus {
+.price__range-toggle:focus,
+.price__range-toggle:focus-within {
   
   border: 9px solid #ffffff;
 }
@@ -1591,13 +1606,14 @@ input[type="radio"].visually-hidden {
 
 .sorting .sorting__arrow {
   position: absolute;
-  top: 14px;
+  bottom: 0;
   right: 6px;
 
   width: 20px;
   height: 20px;
   background-image: url("../img/icon-down-dir.svg");
   background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .sorting select {
@@ -1623,6 +1639,7 @@ input[type="radio"].visually-hidden {
 .sorting:hover .sorting__arrow {
   cursor: pointer;
   background-image: url("../img/icon-down-dir-black.svg");
+  pointer-events: none
 }
 
 
@@ -1673,6 +1690,11 @@ opacity: 0,8;
 .fatness input[type="radio"] + label:hover::before {
   border: 4px solid rgba(255, 255, 255, 1);
 }
+
+/* .fatness:focus input[type="radio"] + label::before,
+.fatness:focus-within input[type="radio"] + label::before {
+  border: 4px solid red;
+} */
 
 .fatness input[type="radio"]:checked + label:hover::after {
   background-color: rgba(255, 255, 255, 1);
@@ -1774,6 +1796,7 @@ background-color: transparent;
 
 .pagination__item--current:hover,
 .pagination__item--current:focus,
+.pagination__item--current:focus-within,
 .pagination__item:active {
   color: #000000;
   background-color: #ffffff;

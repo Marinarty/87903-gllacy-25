@@ -64,7 +64,7 @@
                 </form>
               </div>
               </div>
-              <div class="cart">
+              <div class="cart cart--cart-with-goods">
                 <p class="visually-hidden">Корзина</p>
                 <a href="#" class="btn  btn-transparent btn-transparent--cart-with-goods">
                   <span>2 товара</span>
@@ -154,15 +154,15 @@
         <fieldset class="topping">
           <legend>Наполнители:</legend>
           <div class="btn  btn-transparent">
-          <input class="visually-hidden" type="checkbox" id="chocolate" name="topping" value="шоколад" checked>
+          <input class="visually-hidden" type="checkbox" id="chocolate" name="topping[]" value="шоколад" checked>
           <label for="chocolate">Шоколадные</label>
-          <input class="visually-hidden" type="checkbox" id="sugar" name="topping" value="сахар" checked>
+          <input class="visually-hidden" type="checkbox" id="sugar" name="topping[]" value="сахар" checked>
           <label for="sugar">Сахарные присыпки</label>
-          <input class="visually-hidden" type="checkbox" id="fruits" name="topping" value="фрукты">
+          <input class="visually-hidden" type="checkbox" id="fruits" name="topping[]" value="фрукты">
           <label for="fruits">Фрукты</label>
-          <input class="visually-hidden" type="checkbox" id="syrups" name="topping" value="сироп">
+          <input class="visually-hidden" type="checkbox" id="syrups" name="topping[]" value="сироп">
           <label for="syrups">Сиропы</label>
-          <input class="visually-hidden" type="checkbox" id="jams" name="topping" value="джем">
+          <input class="visually-hidden" type="checkbox" id="jams" name="topping[]" value="джем">
           <label for="jams">Джемы</label>
         </div>
         </fieldset>
@@ -348,7 +348,7 @@
         </div>
           <div class="copyright">
             <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" class="academy-logo"><img src="img/logo-htmlacademy.svg" width="110" height="40" alt="HTMLAcademy"></a>
-            <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTMLAcademy</a> &#169; 2019</p>
+            <p class="copyright__developed-by">Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTMLAcademy</a> &#169; 2019</p>
           </div>
       </div>
       </footer>

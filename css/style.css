@@ -745,15 +745,14 @@ border-radius: 20px;
   .promo-item--raspberry {
       background-color: #ca2e5a;
       background-image: url("../img/raspberry-bg.jpg");
-      /* background-repeat: no-repeat; */
+      background-repeat: no-repeat;
   }
 
-  /* коряво проходит тест на переполнение */
 
       .promo-item--chocolate {
     background-color: #422110;
     background-image: url("../img/chocolate-bg.jpg");
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 
       
 }
@@ -768,6 +767,7 @@ border-radius: 20px;
 
   .promo-item__desc {
       font-size: 18px;
+      font-weight: 700;
       margin-bottom: 45px;
   }
 
@@ -821,12 +821,27 @@ border-radius: 20px;
 }
 
 .catalog-item:hover .catalog-item__photo,
+.catalog-item:focus .catalog-item__photo,
+.catalog-item:focus-within .catalog-item__photo,
 .catalog-item:hover .catalog-item__price,
-.catalog-item:hover .catalog-item__item-title {
+.catalog-item:focus .catalog-item__price,
+.catalog-item:focus-within .catalog-item__price,
+.catalog-item:hover .catalog-item__item-title,
+.catalog-item:focus .catalog-item__item-title,
+.catalog-item:focus-within .catalog-item__item-title {
   z-index: 400;
 }
 
-.catalog-item:hover .catalog-item__hover {
+
+.catalog-item:focus .catalog-item__item-title a,
+.catalog-item:focus-within .catalog-item__item-title a {
+  color: #ffbc9e;
+border-bottom-color: #ffbc9e;
+}
+
+.catalog-item:hover .catalog-item__hover,
+.catalog-item:focus .catalog-item__hover,
+.catalog-item:focus-within .catalog-item__hover {
   display: flex;
 }
 
@@ -988,7 +1003,7 @@ border-radius: 20px;
       
       background-color: #ffffff;
       background-image: url("../img/new-article-bg.jpg");
-      /* background-repeat: no-repeat; */
+      background-repeat: no-repeat;
       border-radius: 15px;
 
 
@@ -1030,7 +1045,7 @@ border-radius: 20px;
       
       background-color: #f8f7f4;
       background-image: url("../img/subscription-bg.jpg");
-      /* background-repeat: no-repeat; */
+      background-repeat: no-repeat;
       border-radius: 15px;
 
 }
@@ -1244,7 +1259,15 @@ line-height: 18px;
 .useful-links__item {
   border: 0;
   margin-top: 6px;
+ 
   
+}
+
+.useful-links__item:hover span,
+.useful-links__item:focus span,
+.useful-links__item:hover:focus-within span {
+  color: #ffbc9e;
+  border-bottom-color: #ffbc9e;
 }
 
 .useful-links__item--favorite {
@@ -1271,10 +1294,17 @@ line-height: 18px;
 }
 
 
+
 .copyright p {
     font-size: 12px;
     margin: 0;
     padding: 0;
+}
+
+.copyright__developed-by:focus a,
+.copyright__developed-by:focus-within a {
+  color: #ffbc9e;
+  border-bottom-color: #ffbc9e;
 }
 
 .modal__background {

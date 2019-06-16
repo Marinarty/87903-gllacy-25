@@ -730,6 +730,9 @@ img {
   flex-basis: 520px;
   padding: 20px;
   padding-bottom: 30px;
+  display: flex;
+
+flex-wrap: wrap;
 
   border-radius: 15px;
 
@@ -768,7 +771,7 @@ img {
 .promo-item__order {
   display: inline-block;
   vertical-align: middle;
-  float: right;
+  margin-left: auto;
 
 
 }
@@ -985,6 +988,7 @@ img {
   background-image: url("../img/new-article-bg.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: cover;
   border-radius: 15px;
 
 
@@ -1087,10 +1091,7 @@ img {
 
 
 .map {
-  width: 1200px;
   height: 430px;
-  margin: 0 auto;
-
 
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
@@ -1142,7 +1143,7 @@ img {
   text-decoration: none;
 }
 
-.page-footer .container {
+.page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;

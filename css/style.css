@@ -499,7 +499,7 @@ img {
   box-shadow: inset 0px 2px 1px 0 #696969;
 }
 
-.dropdown-item a:active {
+li.dropdown-item:active a {
   background-color: #f6b5a5;
   border-radius: 0;
   border: none;

@@ -253,7 +253,6 @@ img {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   list-style: none;
-
 }
 
 .login-form__wrapper {
@@ -275,7 +274,6 @@ img {
   vertical-align: middle;
   border-bottom: 1px solid #adacaa;
 }
-
 
 .login-form__tips a:hover,
 .login-form__tips a:focus {
@@ -652,7 +650,6 @@ li.dropdown-item:active a {
   background-image: -webkit-linear-gradient(bottom, #e74a35, #f26843);
   background-image: -o-linear-gradient(bottom, #e74a35, #f26843);
   background-image: linear-gradient(to top, #e74a35, #f26843);
-
 }
 
 .btn-main:hover,
@@ -880,7 +877,6 @@ li.dropdown-item:active a {
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
-
 }
 
 .features .features__item {

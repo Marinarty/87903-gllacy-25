@@ -6,7 +6,7 @@
   <title>Магазин мороженого Gllacy</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -187,7 +187,7 @@
           </form>
         </div>
       </div>
-      <section class="map">
+      <section id="map" class="map">
         <div class="container  container--map">
           <div class="contact-info">
             <h2 class="visually-hidden">Контактная информация</h2>
@@ -245,15 +245,82 @@
           <label class="visually-hidden" for="feedback-user-name">Имя</label>
           <input class="field  feedback__name" type="text" placeholder="Как вас зовут?" name="feedback-user-name" id="feedback-user-name">
           <label class="visually-hidden" for="feedback-user-email">Электронная почта</label>
-          <input class="field  feedback__email" type="email" placeholder="Ваша почта для ответа?" name="feedback-user-email" id="feedback-user-email" required>
+          <input class="field  feedback__email" type="email" placeholder="Ваша почта для ответа?" name="feedback-user-email" id="feedback-user-email">
           <label class="visually-hidden" for="feedback-user-text">Текст сообщения</label>
-          <textarea class="field" rows="5" cols="40" placeholder="Напишите что-нибудь..." name="feedback-user-text" id="feedback-user-text" required></textarea>
+          <textarea class="field  feedback__user-text" rows="5" cols="40" placeholder="Напишите что-нибудь..." name="feedback-user-text" id="feedback-user-text"></textarea>
           <button type="submit" class="feedback__send-button  btn  btn-main">Отправить</button>
         </form>
         <button class="modal__close" type="button"><span class="visually-hidden">Закрыть</span></button>
       </section>
     </div>
   </div>
+  <script src=https://api-maps.yandex.ru/2.1/?lang=ru_RU></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    ymaps.ready(init);
+    var map;
+    function init() {
+        map = new ymaps.Map("map", {
+            center: [59.938076, 30.329176],
+            zoom: 16,
+            controls: []
+        });
+        var placemark = new ymaps.Placemark([59.938631, 30.323055], {}, {
+            iconLayout: "default#image",
+            iconImageHref: "img/pin.svg",
+            iconImageSize: [80, 140]
+        });
+        map.geoObjects.add(placemark);
+    }
+});
+
+</script>
+
+
+  <script>
+    var link = document.querySelector(".contact-info__contact-form");
+    var popup = document.querySelector(".modal__background");
+    var close = popup.querySelector(".modal__close");
+    var form = popup.querySelector(".feedback__form");
+    var email = popup.querySelector(".feedback__email");
+    var text = popup.querySelector(".feedback__user-text");
+
+
+    link.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      popup.classList.add("modal__background--show");
+});
+
+close.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    popup.classList.remove("modal__background--show");
+    email.classList.remove("email-error");
+    text.classList.remove("text-error");   
+  });
+
+  window.addEventListener("keydown", function (evt) {
+    if (evt.keyCode === 27) {
+      evt.preventDefault();
+      if (popup.classList.contains("modal__background--show")) {
+        popup.classList.remove("modal__background--show");
+        email.classList.remove("email-error");
+    text.classList.remove("text-error");
+      }
+    }
+  });
+
+  form.addEventListener("submit", function (evt) {
+    if (!email.value) {
+      evt.preventDefault();
+
+      email.classList.add("email-error");
+      if (!text.value) {
+        evt.preventDefault();
+        text.classList.add("text-error");
+      }
+    }
+  });
+  </script>
 </body>
 
 </html>

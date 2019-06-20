@@ -1035,7 +1035,9 @@ li.dropdown-item:active a {
 }
 
 .map {
-  height: 430px;
+  min-height: 430px;
+  width: 1200px;
+  margin: 0 auto;
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
   background-position: top center;
@@ -1045,12 +1047,15 @@ li.dropdown-item:active a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 60px;
+  position: relative;
 }
 
 .contact-info {
+  position: absolute;
+  top: 60px;
+  right: 28px;
   -ms-flex-preferred-size: 252px;
-  flex-basis: 252px;
+  width: 252px;
   padding: 18px 26px;
   padding-bottom: 30px;
   margin-left: auto;
@@ -1066,6 +1071,7 @@ li.dropdown-item:active a {
   line-height: 20px;
   background-color: #fefefe;
   border-radius: 15px;
+  z-index: 100;
 }
 
 .contact-info__address,
@@ -1227,6 +1233,11 @@ li.dropdown-item:active a {
   border-bottom-color: #ffbc9e;
 }
 
+@keyframes feedback-open-animation {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .modal__background {
   position: fixed;
   display: none;
@@ -1236,6 +1247,11 @@ li.dropdown-item:active a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .4);
+}
+
+.modal__background--show {
+  display: block;
+  animation: feedback-open-animation 0.6s;
 }
 
 .feedback {
@@ -1275,6 +1291,34 @@ li.dropdown-item:active a {
 
 .feedback input {
   margin-bottom: 20px;
+}
+
+@keyframes feedback-error-animation {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.email-error,
+.text-error {
+  box-shadow: inset 1px 1px 0px 0px rgba(251, 57, 42, 1), inset -1px -1px 0px 0px rgba(251, 57, 42, 1);
+  animation: feedback-error-animation 1s;
 }
 
 .modal__title {
@@ -1516,7 +1560,7 @@ input[type="radio"].visually-hidden {
 
 .sorting .sorting__arrow {
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   right: 6px;
   width: 20px;
   height: 20px;

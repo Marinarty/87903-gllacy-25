@@ -1233,9 +1233,24 @@ li.dropdown-item:active a {
   border-bottom-color: #ffbc9e;
 }
 
+@-webkit-keyframes feedback-open-animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes feedback-open-animation {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .modal__background {
@@ -1251,6 +1266,7 @@ li.dropdown-item:active a {
 
 .modal__background--show {
   display: block;
+  -webkit-animation: feedback-open-animation 0.6s;
   animation: feedback-open-animation 0.6s;
 }
 
@@ -1259,9 +1275,11 @@ li.dropdown-item:active a {
   padding: 16px 25px;
   padding-bottom: 30px;
   position: absolute;
-  top: 333px;
+  top: 50%;
   left: 50%;
-  margin-left: -240px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 10px;
@@ -1285,7 +1303,7 @@ li.dropdown-item:active a {
 .feedback__send-button {
   -ms-flex-item-align: end;
   -ms-grid-row-align: end;
-  align-self: end;
+  margin-left: auto;
   margin-top: 30px;
 }
 
@@ -1293,31 +1311,61 @@ li.dropdown-item:active a {
   margin-bottom: 20px;
 }
 
-@keyframes feedback-error-animation {
+@-webkit-keyframes feedback-error-animation {
+
   0%,
   100% {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-  
+
   10%,
   30%,
   50%,
   70%,
   90% {
+    -webkit-transform: translateX(-10px);
     transform: translateX(-10px);
   }
-  
+
   20%,
   40%,
   60%,
   80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@keyframes feedback-error-animation {
+
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
     transform: translateX(10px);
   }
 }
 
 .email-error,
 .text-error {
-  box-shadow: inset 1px 1px 0px 0px rgba(251, 57, 42, 1), inset -1px -1px 0px 0px rgba(251, 57, 42, 1);
+  -webkit-animation: feedback-error-animation 1s;
   animation: feedback-error-animation 1s;
 }
 
@@ -1709,6 +1757,7 @@ input[type="radio"].visually-hidden {
   margin-right: -7px;
   margin-left: 0;
 }
+
 .pagination__item--current {
   color: #000000;
   background-color: #ffffff;
